@@ -1,5 +1,16 @@
 import fs from 'node:fs/promises';
 
+if (process.argv.length != 3) {
+  console.error('Usage: node [day].js input-file.js');
+  process.exit(1);
+}
+
+const inputFileName = process.argv[2];
+
+main(
+  inputFileName,
+);
+
 async function main(
   fileName,
 ) {
@@ -46,14 +57,3 @@ async function main(
 
   console.log('Similarity:', similarity);
 }
-
-if (process.argv.length != 3) {
-  console.error('Usage: node [day].js input-file.js');
-  process.exit(1);
-}
-
-const inputFileName = process.argv[2];
-
-main(
-  inputFileName,
-);
